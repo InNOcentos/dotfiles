@@ -1,2 +1,2 @@
 # dotfiles
-nvim config
+nvim config + naysayer88 theme
