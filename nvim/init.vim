@@ -8,6 +8,7 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 " Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'dyng/ctrlsf.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -56,9 +57,12 @@ nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-P> :Files ~<Cr>
+
+:map <F9> :cnf
+
+"nnoremap <C-f> :Ag **/*<Cr>
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
