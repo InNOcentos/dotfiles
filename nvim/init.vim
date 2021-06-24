@@ -19,7 +19,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-
+"
 " ??
 Plug 'scrooloose/nerdcommenter'
 
@@ -27,6 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-scripts/Zenburn'
+Plug 'lifepillar/vim-solarized8'
 "Plug 'burntcarrot/punchy.vim'
 "Plug 'srcery-colors/srcery-vim'
 Plug 'arcticicestudio/nord-vim'
@@ -104,11 +105,13 @@ set cindent
 "set backspace=indent,eol,start
 
 " COLORS SETTINGS
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+
 set background=dark
 colorscheme simple-dark
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"set termguicolors
 
 " SPACE VISUAL INDENTATION SETTINGS
 "set lcs+=space:.
