@@ -31,14 +31,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-scripts/Zenburn'
-Plug 'davidosomething/vim-colors-meh'
-Plug 'keith/parsec'
 Plug 'lifepillar/vim-solarized8'
-Plug 'gryf/wombat256grf'
-
-"Plug 'burntcarrot/punchy.vim'
-"Plug 'srcery-colors/srcery-vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'jordwalke/flatlandia'
 
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -57,7 +51,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-nnoremap <C-p> :Files<Cr>
+nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-P> :Files ~<Cr>
 
 :map <F9> :cnf
@@ -121,12 +115,13 @@ set cindent
 
 " COLORS SETTINGS
 "
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set background=dark
 
 "colorscheme wombat256grf
 
+"colorscheme flatland
 colorscheme solarized8
 
 
