@@ -8,7 +8,10 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 " Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 Plug 'christoomey/vim-tmux-navigator'
 
 " idents
@@ -19,7 +22,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-"
+
 " ??
 Plug 'scrooloose/nerdcommenter'
 
@@ -27,7 +30,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-scripts/Zenburn'
+Plug 'davidosomething/vim-colors-meh'
+Plug 'keith/parsec'
 Plug 'lifepillar/vim-solarized8'
+Plug 'gryf/wombat256grf'
+
 "Plug 'burntcarrot/punchy.vim'
 "Plug 'srcery-colors/srcery-vim'
 Plug 'arcticicestudio/nord-vim'
@@ -48,6 +55,10 @@ inoremap jk <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+
+
+nnoremap <C-p> :Files<Cr>
+nnoremap <C-P> :Files ~<Cr>
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
@@ -105,18 +116,19 @@ set cindent
 "set backspace=indent,eol,start
 
 " COLORS SETTINGS
-
+"
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
-
 set background=dark
-colorscheme simple-dark
+
+"colorscheme wombat256grf
+
+colorscheme solarized8
 
 
 " SPACE VISUAL INDENTATION SETTINGS
 "set lcs+=space:.
 "set list!
-
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
