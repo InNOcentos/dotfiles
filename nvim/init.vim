@@ -1,4 +1,6 @@
-" Specify a directory for plugins
+" SPACE VISUAL INDENTATION SETTINGS
+set lcs+=space:.
+"set list!
 
 call plug#begin('~/.vim/plugged')
 " Typescript, linter, snippets...
@@ -32,8 +34,12 @@ Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-scripts/Zenburn'
 Plug 'lifepillar/vim-solarized8'
-Plug 'jordwalke/flatlandia'
-
+Plug 'vivkin/flatland.vim'
+Plug 'glepnir/oceanic-material'
+"=============
+Plug 'softmotions/vim-dark-frost-theme'
+Plug 'filipekiss/night-hawk'
+Plug 'damage220/solas.vim'
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
 "Plug 'ryanoasis/vim-devicons'
@@ -115,19 +121,16 @@ set cindent
 
 " COLORS SETTINGS
 "
-"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set background=dark
 
 "colorscheme wombat256grf
 
 "colorscheme flatland
-colorscheme solarized8
+colorscheme solas
 
 
-" SPACE VISUAL INDENTATION SETTINGS
-"set lcs+=space:.
-"set list!
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
