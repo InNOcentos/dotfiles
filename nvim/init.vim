@@ -1,6 +1,6 @@
 " SPACE VISUAL INDENTATION SETTINGS
 set lcs+=space:.
-"set list!
+set list!
 
 call plug#begin('~/.vim/plugged')
 " Typescript, linter, snippets...
@@ -18,7 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " idents
-"Plug 'yggdroot/indentline'                              " visualize indentation levels
+Plug 'yggdroot/indentline'                              " visualize indentation levels
 
 " git
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -30,16 +30,25 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 
 " themes
+"=============
+"Plug 'vim-scripts/Ambient-Color-Scheme'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'vim-scripts/Zenburn'
-Plug 'lifepillar/vim-solarized8'
-Plug 'vivkin/flatland.vim'
-Plug 'glepnir/oceanic-material'
+Plug 'savq/melange'
+"Plug 'vim-scripts/Zenburn'
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'vivkin/flatland.vim'
+"Plug 'glepnir/oceanic-material'
+"Plug 'softmotions/vim-dark-frost-theme'
+"Plug 'filipekiss/night-hawk'
+"Plug 'damage220/solas.vim'
+"Plug 'cocopon/iceberg.vim'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'sainnhe/sonokai'
+"Plug 'carakan/new-railscasts-theme'
+"Plug 'junegunn/seoul256.vim'
 "=============
-Plug 'softmotions/vim-dark-frost-theme'
-Plug 'filipekiss/night-hawk'
-Plug 'damage220/solas.vim'
+
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
 "Plug 'ryanoasis/vim-devicons'
@@ -128,9 +137,7 @@ set background=dark
 "colorscheme wombat256grf
 
 "colorscheme flatland
-colorscheme solas
-
-
+colorscheme melange
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
@@ -267,3 +274,4 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>i
+
