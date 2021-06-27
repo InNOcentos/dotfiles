@@ -137,6 +137,10 @@ set background=dark
 "colorscheme wombat256grf
 
 "colorscheme flatland
+
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_bold = 0
+
 colorscheme gruvbox
 
 " sync open file with NERDTree
@@ -274,4 +278,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>i
+
+
 
