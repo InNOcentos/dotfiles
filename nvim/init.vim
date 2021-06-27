@@ -137,7 +137,7 @@ set background=dark
 "colorscheme wombat256grf
 
 "colorscheme flatland
-colorscheme melange
+colorscheme gruvbox
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
