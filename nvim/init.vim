@@ -15,6 +15,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'eugen0329/vim-esearch'
+
 Plug 'christoomey/vim-tmux-navigator'
 
 " idents
@@ -66,11 +68,9 @@ nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-nnoremap <C-p> :GFiles<Cr>
-nnoremap <C-P> :Files ~<Cr>
-
 :map <F9> :cnf
 
+map ; :Files ~<CR>
 "nnoremap <C-f> :Ag **/*<Cr>
 
 " open NERDTree automatically
