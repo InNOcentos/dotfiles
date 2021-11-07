@@ -1,6 +1,5 @@
-" SPACE VISUAL INDENTATION SETTINGS
-set lcs+=space:.
-set list!
+"set lcs+=space:.
+"set list!
 
 call plug#begin('~/.vim/plugged')
 " Typescript, linter, snippets...
@@ -31,21 +30,31 @@ Plug 'vim-airline/vim-airline'
 " ??
 Plug 'scrooloose/nerdcommenter'
 
+"pairs
+Plug 'jiangmiao/auto-pairs'
+
+" NPM
+Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+
+" backgound
+Plug 'tribela/vim-transparent'
+
 " themes
 "=============
-"Plug 'vim-scripts/Ambient-Color-Scheme'
+Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'savq/melange'
+Plug 'altercation/vim-colors-solarized'
+"Plug 'vim-scripts/Ambient-Color-Scheme'
+"Plug 'savq/melange'
 "Plug 'vim-scripts/Zenburn'
-"Plug 'lifepillar/vim-solarized8'
 "Plug 'vivkin/flatland.vim'
 "Plug 'glepnir/oceanic-material'
 "Plug 'softmotions/vim-dark-frost-theme'
 "Plug 'filipekiss/night-hawk'
 "Plug 'damage220/solas.vim'
-"Plug 'cocopon/iceberg.vim'
-"Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
 "Plug 'sainnhe/sonokai'
 "Plug 'carakan/new-railscasts-theme'
 "Plug 'junegunn/seoul256.vim'
@@ -70,7 +79,9 @@ nmap ++ <plug>NERDCommenterToggle
 
 :map <F9> :cnf
 
-map ; :Files ~<CR>
+"space + ff - search by files
+
+map ; :GFiles<CR>
 "nnoremap <C-f> :Ag **/*<Cr>
 
 " open NERDTree automatically
@@ -133,15 +144,15 @@ set cindent
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set background=dark
+syntax enable
 
-"colorscheme wombat256grf
-
-"colorscheme flatland
-
-let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_bold = 0
 
-colorscheme gruvbox
+"let g:solarized_termcolors=16
+
+colorscheme gruvbox8_hard
+
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
