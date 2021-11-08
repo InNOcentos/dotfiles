@@ -1,157 +1,169 @@
-"set lcs+=space:.
-"set list!
+    "set lcs+=space:.
+    "set list!
 
-call plug#begin('~/.vim/plugged')
-" Typescript, linter, snippets...
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+    call plug#begin('~/.vim/plugged')
+    " Typescript, linter, snippets...
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
-" Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'dyng/ctrlsf.vim'
+    " Navigation
+    Plug 'scrooloose/nerdtree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'dyng/ctrlsf.vim'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
-Plug 'eugen0329/vim-esearch'
+    Plug 'eugen0329/vim-esearch'
 
-Plug 'christoomey/vim-tmux-navigator'
+    Plug 'christoomey/vim-tmux-navigator'
 
-" idents
-Plug 'yggdroot/indentline'                              " visualize indentation levels
+    " idents
+    "Plug 'yggdroot/indentline'                              " visualize indentation levels
 
-" git
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
+    " git
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'vim-airline/vim-airline'
 
-" ??
-Plug 'scrooloose/nerdcommenter'
+    " ??
+    Plug 'scrooloose/nerdcommenter'
 
-"pairs
-Plug 'jiangmiao/auto-pairs'
+    "pairs
+    Plug 'jiangmiao/auto-pairs'
 
-" NPM
-Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+    " NPM
+    Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 
-" backgound
-Plug 'tribela/vim-transparent'
+    " backgound
+    Plug 'tribela/vim-transparent'
 
-" themes
-"=============
-Plug 'lifepillar/vim-solarized8'
-Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'altercation/vim-colors-solarized'
-"Plug 'vim-scripts/Ambient-Color-Scheme'
-"Plug 'savq/melange'
-"Plug 'vim-scripts/Zenburn'
-"Plug 'vivkin/flatland.vim'
-"Plug 'glepnir/oceanic-material'
-"Plug 'softmotions/vim-dark-frost-theme'
-"Plug 'filipekiss/night-hawk'
-"Plug 'damage220/solas.vim'
-Plug 'cocopon/iceberg.vim'
-Plug 'arcticicestudio/nord-vim'
-"Plug 'sainnhe/sonokai'
-"Plug 'carakan/new-railscasts-theme'
-"Plug 'junegunn/seoul256.vim'
-"=============
+    "json
+    Plug 'elzr/vim-json'
 
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
-"Plug 'ryanoasis/vim-devicons'
+    " themes
+    "=============
+    Plug 'mhartington/oceanic-next'
+    Plug 'lifepillar/vim-solarized8'
+    Plug 'morhetz/gruvbox'
+    Plug 'lifepillar/vim-gruvbox8'
+    Plug 'altercation/vim-colors-solarized'
+    "Plug 'vim-scripts/Ambient-Color-Scheme'
+    "Plug 'savq/melange'
+    "Plug 'vivkin/flatland.vim'
+    "Plug 'glepnir/oceanic-material'
+    "Plug 'softmotions/vim-dark-frost-theme'
+    "Plug 'filipekiss/night-hawk'
+    "Plug 'damage220/solas.vim'
+    Plug 'cocopon/iceberg.vim'
+    Plug 'arcticicestudio/nord-vim'
+    "Plug 'sainnhe/sonokai'
+    "Plug 'carakan/new-railscasts-theme'
+    Plug 'mikker/seoul256-iTerm'
+Plug 'junegunn/seoul256.vim'
+    "Plug 'vim-scripts/Zenburn'
+Plug 'acepukas/vim-zenburn'
+Plug 'mdlerch/tungsten.vim'
+Plug 'haystackandroid/vim-crunchbang'
+Plug 'habamax/vim-bronzage'
+Plug 'conweller/muted.vim'
+Plug 'AlxHnr/clear_colors'
+    "=============
 
-" Initialize plugin system
-call plug#end()
+    "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+    "Plug 'tsony-tsonev/nerdtree-git-plugin'
+    "Plug 'ryanoasis/vim-devicons'
 
-:let mapleader = "\<Space>"
-nmap<leader>gs :G<CR>
-nmap<leader>gh :diffget //3<CR>
-nmap<leader>gu :diffget //2<CR>
+    " Initialize plugin system
+    call plug#end()
 
-inoremap jk <ESC>
-nmap <C-n> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
+    :let mapleader = "\<Space>"
+    nmap<leader>gs :G<CR>
+    nmap<leader>gh :diffget //3<CR>
+    nmap<leader>gu :diffget //2<CR>
 
-:map <F9> :cnf
+    inoremap jk <ESC>
+    nmap <C-n> :NERDTreeToggle<CR>
+    vmap ++ <plug>NERDCommenterToggle
+    nmap ++ <plug>NERDCommenterToggle
 
-"space + ff - search by files
+    :map <F9> :cnf
 
-map ; :GFiles<CR>
-"nnoremap <C-f> :Ag **/*<Cr>
+    "space + ff - search by files
 
-" open NERDTree automatically
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * NERDTree
+    map ; :GFiles<CR>
+    "nnoremap <C-f> :Ag **/*<Cr>
 
-
-let g:NERDTreeGitStatusWithFlags = 1
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:NERDTreeGitStatusNodeColorization = 1
-"let g:NERDTreeColorMapCustom = {
-    "\ "Staged"    : "#0ee375",  
-    "\ "Modified"  : "#d9bf91",  
-    "\ "Renamed"   : "#51C9FC",  
-    "\ "Untracked" : "#FCE77C",  
-    "\ "Unmerged"  : "#FC51E6",  
-    "\ "Dirty"     : "#FFBD61",  
-    "\ "Clean"     : "#87939A",   
-    "\ "Ignored"   : "#808080"   
-    "\ }                         
+    " open NERDTree automatically
+    "autocmd StdinReadPre * let s:std_in=1
+    "autocmd VimEnter * NERDTree
 
 
-let g:NERDTreeIgnore = ['^node_modules$']
+    let g:NERDTreeGitStatusWithFlags = 1
+    "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+    "let g:NERDTreeGitStatusNodeColorization = 1
+    "let g:NERDTreeColorMapCustom = {
+        "\ "Staged"    : "#0ee375",  
+        "\ "Modified"  : "#d9bf91",  
+        "\ "Renamed"   : "#51C9FC",  
+        "\ "Untracked" : "#FCE77C",  
+        "\ "Unmerged"  : "#FC51E6",  
+        "\ "Dirty"     : "#FFBD61",  
+        "\ "Clean"     : "#87939A",   
+        "\ "Ignored"   : "#808080"   
+        "\ }                         
 
-" vim-prettier
-"let g:prettier#quickfix_enabled = 0
-"let g:prettier#quickfix_auto_focus = 0
-" prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" run prettier on save
-"let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+    let g:NERDTreeIgnore = ['^node_modules$']
+
+    " vim-prettier
+    "let g:prettier#quickfix_enabled = 0
+    "let g:prettier#quickfix_auto_focus = 0
+    " prettier command for coc
+    command! -nargs=0 Prettier :CocCommand prettier.formatFile
+    " run prettier on save
+    "let g:prettier#autoformat = 0
+    "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+    " ctrlp
+    let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" j/k will move virtual lines (lines that wrap)
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+    " j/k will move virtual lines (lines that wrap)
+    noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+    noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-set relativenumber
+    set relativenumber
 
-set smarttab
-set cindent
-set tabstop=4
-set shiftwidth=4
-" always uses ppaces instead of tab characters
-set expandtab
+    set smarttab
+    set cindent
+    set tabstop=4
+    set shiftwidth=4
+    " always uses ppaces instead of tab characters
+    set expandtab
 
-"indent
-set backspace=indent,eol,start
-set autoindent
-set smartindent
-set cindent
-"set backspace=indent,eol,start
+    "indent
+    set backspace=indent,eol,start
+    set autoindent
+    set smartindent
+    set cindent
+    set backspace=indent,eol,start
 
-" COLORS SETTINGS
+    " COLORS SETTINGS
 "
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
-set background=dark
 syntax enable
 
 "let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_bold = 0
 
-"let g:solarized_termcolors=16
+let g:solarized_termcolors=16
+let g:seoul256_srgb = 1
 
-colorscheme gruvbox8_hard
+colo bronzage
+set background=dark
 
 
 " sync open file with NERDTree
@@ -291,4 +303,5 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>i
 
 
-
+let g:vim_json_syntax_conceal = 0
+set conceallevel=0
