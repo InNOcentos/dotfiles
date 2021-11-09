@@ -13,6 +13,7 @@
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'stsewd/fzf-checkout.vim'
 
     Plug 'eugen0329/vim-esearch'
 
@@ -46,12 +47,13 @@
     "=============
     Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
-    Plug 'morhetz/gruvbox'
+    "Plug 'morhetz/gruvbox'
     Plug 'lifepillar/vim-gruvbox8'
+    Plug 'morhetz/gruvbox'
     Plug 'altercation/vim-colors-solarized'
     "Plug 'vim-scripts/Ambient-Color-Scheme'
     "Plug 'savq/melange'
-    "Plug 'vivkin/flatland.vim'
+    Plug 'vivkin/flatland.vim'
     "Plug 'glepnir/oceanic-material'
     "Plug 'softmotions/vim-dark-frost-theme'
     "Plug 'filipekiss/night-hawk'
@@ -80,8 +82,9 @@ Plug 'AlxHnr/clear_colors'
 
     :let mapleader = "\<Space>"
     nmap<leader>gs :G<CR>
-    nmap<leader>gh :diffget //3<CR>
-    nmap<leader>gu :diffget //2<CR>
+    nmap<leader>gj :diffget //3<CR>
+    nmap<leader>gf :diffget //2<CR>
+    nnoremap <leader>gc :GCheckout<CR>
 
     inoremap jk <ESC>
     nmap <C-n> :NERDTreeToggle<CR>
@@ -156,13 +159,13 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 syntax enable
 
-"let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_bold = 0
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_bold = 1
 
 let g:solarized_termcolors=16
 let g:seoul256_srgb = 1
 
-colo bronzage
+colo gruvbox
 set background=dark
 
 
