@@ -1,4 +1,5 @@
-    "set lcs+=space:.  set list!
+    set lcs+=space:.
+    set list!
 
     call plug#begin('~/.vim/plugged')
     " Typescript, linter, snippets...
@@ -19,7 +20,7 @@
     Plug 'christoomey/vim-tmux-navigator'
 
     " idents
-    "Plug 'yggdroot/indentline'                              " visualize indentation levels
+    Plug 'yggdroot/indentline'                              " visualize indentation levels
 
     " git
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -99,8 +100,6 @@
     nmap ++ <plug>NERDCommenterToggle
 
     :map <F9> :cnf
-
-    map ff <leader>ff
 
     "space + ff - search by files
 
