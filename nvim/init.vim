@@ -1,5 +1,4 @@
-    "set lcs+=space:.
-    "set list!
+    "set lcs+=space:.  set list!
 
     call plug#begin('~/.vim/plugged')
     " Typescript, linter, snippets...
@@ -63,14 +62,14 @@
     "Plug 'sainnhe/sonokai'
     "Plug 'carakan/new-railscasts-theme'
     Plug 'mikker/seoul256-iTerm'
-Plug 'junegunn/seoul256.vim'
-    "Plug 'vim-scripts/Zenburn'
-Plug 'acepukas/vim-zenburn'
-Plug 'mdlerch/tungsten.vim'
-Plug 'haystackandroid/vim-crunchbang'
-Plug 'habamax/vim-bronzage'
-Plug 'conweller/muted.vim'
-Plug 'AlxHnr/clear_colors'
+    Plug 'junegunn/seoul256.vim'
+        "Plug 'vim-scripts/Zenburn'
+    Plug 'acepukas/vim-zenburn'
+    Plug 'mdlerch/tungsten.vim'
+    Plug 'haystackandroid/vim-crunchbang'
+    Plug 'habamax/vim-bronzage'
+    Plug 'conweller/muted.vim'
+    Plug 'AlxHnr/clear_colors'
     "=============
 
     "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -82,20 +81,31 @@ Plug 'AlxHnr/clear_colors'
 
     :let mapleader = "\<Space>"
     nmap<leader>gs :G<CR>
-    nmap<leader>gj :diffget //3<CR>
-    nmap<leader>gf :diffget //2<CR>
+    nmap<leader>gj :diffget //2<CR>
+    nmap<leader>gk :diffget //3<CR>
     nnoremap <leader>gc :GCheckout<CR>
+    nnoremap <leader>gd :Git diff<CR>
+    "<leader>cc - commit
+
+    " Прыгаем по меткам
+    nnoremap 1 :'Q<CR>
+    nnoremap 2 :'W<CR>
+    nnoremap 3 :'E<CR>
+    nnoremap 4 :'R<CR>
 
     inoremap jk <ESC>
-    nmap <C-n> :NERDTreeToggle<CR>
+    nnoremap <C-n>f :NERDTreeToggle<CR>
     vmap ++ <plug>NERDCommenterToggle
     nmap ++ <plug>NERDCommenterToggle
 
     :map <F9> :cnf
 
+    map ff <leader>ff
+
     "space + ff - search by files
 
     map ; :GFiles<CR>
+    map <leader>; :Files ~<CR>
     "nnoremap <C-f> :Ag **/*<Cr>
 
     " open NERDTree automatically
