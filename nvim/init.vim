@@ -1,5 +1,5 @@
     "set lcs+=space:.
-    set list!
+    "set list!
 
     call plug#begin('~/.vim/plugged')
     " Typescript, linter, snippets...
@@ -20,7 +20,7 @@
     Plug 'christoomey/vim-tmux-navigator'
 
     " idents
-    Plug 'yggdroot/indentline'                              " visualize indentation levels
+    "Plug 'yggdroot/indentline'                              " visualize indentation levels
 
     " git
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -38,7 +38,7 @@
     Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 
     " backgound
-    Plug 'tribela/vim-transparent'
+    "Plug 'tribela/vim-transparent'
 
     "json
     Plug 'elzr/vim-json'
@@ -52,7 +52,7 @@
     Plug 'morhetz/gruvbox'
     Plug 'altercation/vim-colors-solarized'
     "Plug 'vim-scripts/Ambient-Color-Scheme'
-    "Plug 'savq/melange'
+    Plug 'savq/melange'
     Plug 'vivkin/flatland.vim'
     "Plug 'glepnir/oceanic-material'
     "Plug 'softmotions/vim-dark-frost-theme'
@@ -71,10 +71,22 @@
     Plug 'habamax/vim-bronzage'
     Plug 'conweller/muted.vim'
     Plug 'AlxHnr/clear_colors'
+    Plug 'mhinz/vim-janah'
+    Plug 'nanotech/jellybeans.vim'
+    Plug 'NLKNguyen/papercolor-theme'
     "=============
+    Plug 'Blevs/vim-dzo'
+    
     "
     "
-    Plug 'flrnd/plastic.vim'
+    Plug 'haystackandroid/carbonized'
+    Plug 'gwutz/vim-materialtheme'
+    Plug '29decibel/codeschool-vim-theme'
+
+    Plug 'scottymoon/vim-twilight'
+    Plug 'juanedi/predawn.vim'
+    Plug 'parkerault/onivim-theme-hybrid'
+    Plug 'doums/darcula'
     "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
     "Plug 'tsony-tsonev/nerdtree-git-plugin'
     "Plug 'ryanoasis/vim-devicons'
@@ -88,6 +100,11 @@
     nmap<leader>gk :diffget //3<CR>
     nnoremap <leader>gc :GCheckout<CR>
     nnoremap <leader>gd :Git diff<CR>
+
+
+    hi DiffAdd gui=NONE guifg=yellow guibg=black
+
+
     "<leader>cc - commit
 
     " Прыгаем по меткам
@@ -97,9 +114,10 @@
     nnoremap 4 :'R<CR>
 
     inoremap jk <ESC>
-    nnoremap <C-n>f :NERDTreeToggle<CR>
+    nnoremap <C-n> :NERDTreeToggle<CR>
     vmap ++ <plug>NERDCommenterToggle
     nmap ++ <plug>NERDCommenterToggle
+
 
     :map <F9> :cnf
 
@@ -107,6 +125,10 @@
 
     map ; :GFiles<CR>
     map <leader>; :Files ~<CR>
+
+
+    cabb W w
+    cabb Q q
     "nnoremap <C-f> :Ag **/*<Cr>
 
     " open NERDTree automatically
@@ -152,8 +174,8 @@
 
     set smarttab
     set cindent
-    set tabstop=4
-    set shiftwidth=4
+    set tabstop=2
+    set shiftwidth=2
     " always uses ppaces instead of tab characters
     set expandtab
 
@@ -167,20 +189,20 @@
         " COLORS SETTINGS
     "
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    "set termguicolors
+    set termguicolors
     "syntax enable
 
-    let g:gruvbox_contrast_dark = 'hard'
-    let g:gruvbox_bold = 0
+    "let g:gruvbox_contrast_dark = 'hard'
+    let g:gruvbox_bold = 1
     let g:seoul256_bold = 0
 
     let g:solarized_termcolors=16
 
-    let g:seoul256_background = 236
+    "let g:impact_transbg=1
+    "
+    let g:jellybeans_use_lowcolor_black = 1
 
-    let g:impact_transbg=1
-
-    colo gruvbox
+    colo darcula
 
     " sync open file with NERDTree
     " " Check if NERDTree is open or active
@@ -320,4 +342,4 @@
 
 
     let g:vim_json_syntax_conceal = 0
-set conceallevel=0
+    set conceallevel=0
