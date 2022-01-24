@@ -1,5 +1,5 @@
-    "set lcs+=space:.
-    "set list!
+    set lcs+=space:.
+    set list!
 
     call plug#begin('~/.vim/plugged')
     " Typescript, linter, snippets...
@@ -9,18 +9,20 @@
     " Navigation
     Plug 'scrooloose/nerdtree'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    Plug 'dyng/ctrlsf.vim'
 
+    "Plug 'nvim-lua/plenary.nvim'
+    "Plug 'nvim-telescope/telescope.nvim'
+
+    "Plug 'dyng/ctrlsf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'stsewd/fzf-checkout.vim'
+    "Plug 'stsewd/fzf-checkout.vim'
 
     Plug 'eugen0329/vim-esearch'
-
     Plug 'christoomey/vim-tmux-navigator'
 
     " idents
-    "Plug 'yggdroot/indentline'                              " visualize indentation levels
+    Plug 'yggdroot/indentline'                              " visualize indentation levels
 
     " git
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -38,7 +40,7 @@
     Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 
     " backgound
-    "Plug 'tribela/vim-transparent'
+    Plug 'tribela/vim-transparent'
 
     "json
     Plug 'elzr/vim-json'
@@ -87,6 +89,9 @@
     Plug 'juanedi/predawn.vim'
     Plug 'parkerault/onivim-theme-hybrid'
     Plug 'doums/darcula'
+    Plug 'habamax/vim-habamax'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'EdenEast/nightfox.nvim'
     "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
     "Plug 'tsony-tsonev/nerdtree-git-plugin'
     "Plug 'ryanoasis/vim-devicons'
@@ -100,9 +105,21 @@
     nmap<leader>gk :diffget //3<CR>
     nnoremap <leader>gc :GCheckout<CR>
     nnoremap <leader>gd :Git diff<CR>
+    nnoremap <leader>gc :Git commit<CR>
 
 
     hi DiffAdd gui=NONE guifg=yellow guibg=black
+
+    " Only for mac - else disable
+    " In ~/.vimrc: 
+    map <C-p> :CtrlP<cr>
+    map <D-p> :CtrlP<cr>
+
+    " In ~/.gvimrc:
+    if has('gui_macvim')
+      " This removes the Cmd-P binding from 'Print':
+      macmenu &File.Print key=<nop>
+    endif
 
 
     "<leader>cc - commit
@@ -121,11 +138,17 @@
 
     :map <F9> :cnf
 
-    "space + ff - search by files
+    "map space + ff - search by files
 
-    map ; :GFiles<CR>
-    map <leader>; :Files ~<CR>
-
+    "FZF MAPPINGS
+    nnoremap <silent>; :GFiles<CR>
+    nnoremap <silent> <leader>; :Files<CR>
+    nnoremap <silent> <leader>'' :Buffers<CR>
+    "nnoremap <leader>ff :Rg! 
+    "nnoremap ; :GFiles<CR>
+    "nnoremap ; :GFiles<CR>
+    "nnoremap ; :GFiles<CR>
+    "map <leader>; :Files ~<CR>
 
     cabb W w
     cabb Q q
@@ -135,6 +158,8 @@
     "autocmd StdinReadPre * let s:std_in=1
     "autocmd VimEnter * NERDTree
 
+
+    set cursorcolumn
 
     let g:NERDTreeGitStatusWithFlags = 1
     "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -201,8 +226,8 @@
     "let g:impact_transbg=1
     "
     let g:jellybeans_use_lowcolor_black = 1
-
-    colo darcula
+    "colorscheme
+    colorscheme nordfox
 
     " sync open file with NERDTree
     " " Check if NERDTree is open or active
@@ -339,7 +364,6 @@
     nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
     " Resume latest coc list
     nnoremap <silent> <space>p  :<C-u>CocListResume<CR>i
-
 
     let g:vim_json_syntax_conceal = 0
     set conceallevel=0
