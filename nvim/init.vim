@@ -40,7 +40,7 @@
     Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 
     " backgound
-    Plug 'tribela/vim-transparent'
+    "Plug 'tribela/vim-transparent'
 
     "json
     Plug 'elzr/vim-json'
@@ -92,6 +92,7 @@
     Plug 'habamax/vim-habamax'
     Plug 'tomasiser/vim-code-dark'
     Plug 'EdenEast/nightfox.nvim'
+    Plug 'savq/melange'
     "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
     "Plug 'tsony-tsonev/nerdtree-git-plugin'
     "Plug 'ryanoasis/vim-devicons'
@@ -217,17 +218,17 @@
     set termguicolors
     "syntax enable
 
-    "let g:gruvbox_contrast_dark = 'hard'
+    let g:gruvbox_contrast_dark = 'medium'
     let g:gruvbox_bold = 1
     let g:seoul256_bold = 0
 
-    let g:solarized_termcolors=16
+    "let g:solarized_termcolors=16
 
     "let g:impact_transbg=1
     "
     let g:jellybeans_use_lowcolor_black = 1
     "colorscheme
-    colorscheme nordfox
+    colorscheme gruvbox
 
     " sync open file with NERDTree
     " " Check if NERDTree is open or active
@@ -238,7 +239,7 @@
 
     " coc config
     let g:coc_global_extensions = [
-      \ 'coc-snippets',
+      "\ 'coc-snippets',
       \ 'coc-pairs',
       \ 'coc-tsserver',
       \ 'coc-eslint', 
