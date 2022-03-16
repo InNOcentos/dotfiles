@@ -1,228 +1,241 @@
-  call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
-  " ========== Debugger ==========
-  Plug 'puremourning/vimspector'
+" ========== Debugger ==========
+Plug 'puremourning/vimspector'
 
-  " ========== Maximizer ==========
-  Plug 'szw/vim-maximizer'
+" ========== Maximizer ==========
+Plug 'szw/vim-maximizer'
 
-  " ========== backgound ==========
-  Plug 'tribela/vim-transparent'
+" ========== backgound ==========
+"Plug 'tribela/vim-transparent'
 
-  " ========== Typescript, linter, snippets... ==========
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+" ========== Typescript, linter, snippets... ==========
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
-  " ========== Navigation ==========
-  Plug 'scrooloose/nerdtree'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim' "Plug 'stsewd/fzf-checkout.vim'
-  Plug 'eugen0329/vim-esearch'
-  Plug 'christoomey/vim-tmux-navigator'
+" ========== Navigation ==========
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' "Plug 'stsewd/fzf-checkout.vim'
+Plug 'eugen0329/vim-esearch'
+Plug 'christoomey/vim-tmux-navigator'
 
-  "Plug 'nvim-lua/plenary.nvim'
-  "Plug 'nvim-telescope/telescope.nvim'
-  "Plug 'dyng/ctrlsf.vim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'dyng/ctrlsf.vim'
 
-  " ========== Git ==========
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
-  Plug 'vim-airline/vim-airline'
+" ========== Git ==========
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 
-  " ========== Commenter ==========
-  Plug 'scrooloose/nerdcommenter'
+" ========== Commenter ==========
+Plug 'scrooloose/nerdcommenter'
 
-  " ========== Pairs ==========
-  Plug 'jiangmiao/auto-pairs'
+" ========== Pairs ==========
+Plug 'jiangmiao/auto-pairs'
 
-  " ========== Npm ==========
-  "Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+" ========== Npm ==========
+"Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 
-  " ========== Json ==========
-  Plug 'elzr/vim-json'
+" ========== Json ==========
+Plug 'elzr/vim-json'
 
-  " ========== C syntax ==========
-  "Plug 'vim-scripts/c.vim'
+" ========== C syntax ==========
+"Plug 'vim-scripts/c.vim'
 
-  " ========== Themes ========== 
-  Plug 'folke/tokyonight.nvim'
-  Plug 'morhetz/gruvbox'
-  Plug 'sainnhe/edge'
-  Plug 'habamax/vim-gruvbit'
-  Plug 'lifepillar/vim-solarized8'
-  Plug 'sonph/onehalf'
-  Plug 'joshdick/onedark.vim'
-  "Plug 'lifepillar/vim-gruvbox8'
-  Plug 'altercation/vim-colors-solarized'
-  "Plug 'sainnhe/everforest'
-  "Plug 'dracula/vim'
-  Plug 'EdenEast/nightfox.nvim'
-  "Plug 'savq/melange'
-  "Plug 'sainnhe/sonokai'
-  "Plug 'doums/darcula'
-  "Plug 'mikker/seoul256-iTerm'
-  "Plug 'mhartington/oceanic-next'
-  "Plug 'acepukas/vim-zenburn'
-  "Plug 'junegunn/seoul256.vim'
-  "Plug 'gruvbox-community/gruvbox'
-  "Plug 'morhetz/gruvbox'
-  "Plug 'vim-scripts/Ambient-Color-Scheme'
-  "Plug 'vivkin/flatland.vim'
-  "Plug 'glepnir/oceanic-material'
-  "Plug 'softmotions/vim-dark-frost-theme'
-  "Plug 'filipekiss/night-hawk'
-  "Plug 'damage220/solas.vim'
-  "Plug 'cocopon/iceberg.vim'
-  Plug 'arcticicestudio/nord-vim'
-  "Plug 'carakan/new-railscasts-theme'
-  "Plug 'vim-scripts/Zenburn'
-  "Plug 'mdlerch/tungsten.vim'
-  "Plug 'haystackandroid/vim-crunchbang'
-  "Plug 'habamax/vim-bronzage'
-  "Plug 'conweller/muted.vim'
-  "Plug 'AlxHnr/clear_colors'
-  "Plug 'mhinz/vim-janah'
-  "Plug 'nanotech/jellybeans.vim'
-  "Plug 'NLKNguyen/papercolor-theme'
-  "Plug 'Blevs/vim-dzo'
-  "Plug 'terryma/vim-multiple-cursors'
-  "Plug 'haystackandroid/carbonized'
-  "Plug 'gwutz/vim-materialtheme'
-  "Plug '29decibel/codeschool-vim-theme'
-  "Plug 'scottymoon/vim-twilight'
-  "Plug 'juanedi/predawn.vim'
-  "Plug 'parkerault/onivim-theme-hybrid'
-  "Plug 'habamax/vim-habamax'
-  "Plug 'tomasiser/vim-code-dark'
-  "Plug 'savq/melange'
+" ========== Themes ========== 
+"Plug 'acepukas/vim-zenburn'
+Plug 'morhetz/gruvbox'
+Plug 'habamax/vim-gruvbit'
+"Plug 'sainnhe/edge'
+"Plug 'vim-scripts/billw.vim'
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'KeitaNakamura/neodark.vim'
+"Plug 'EdenEast/nightfox.nvim'
+"Plug 'sonph/onehalf'
+"Plug 'joshdick/onedark.vim'
+"Plug 'lifepillar/vim-gruvbox8'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'sainnhe/everforest'
+"Plug 'dracula/vim'
+"Plug 'Rigellute/rigel'
+"Plug 'savq/melange'
+"Plug 'sainnhe/sonokai'
+"Plug 'doums/darcula'
+"Plug 'dunstontc/vim-vscode-theme'
+"Plug 'mikker/seoul256-iTerm'
+"Plug 'mhartington/oceanic-next'
+"Plug 'junegunn/seoul256.vim'
+"Plug 'gruvbox-community/gruvbox'
+"Plug 'morhetz/gruvbox'
+"Plug 'vim-scripts/Ambient-Color-Scheme'
+"Plug 'vivkin/flatland.vim'
+"Plug 'glepnir/oceanic-material'
+"Plug 'softmotions/vim-dark-frost-theme'
+"Plug 'filipekiss/night-hawk'
+"Plug 'damage220/solas.vim'
+"Plug 'cocopon/iceberg.vim'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'carakan/new-railscasts-theme'
+"Plug 'vim-scripts/Zenburn'
+"Plug 'mdlerch/tungsten.vim'
+"Plug 'haystackandroid/vim-crunchbang'
+"Plug 'habamax/vim-bronzage'
+"Plug 'conweller/muted.vim'
+"Plug 'AlxHnr/clear_colors'
+"Plug 'mhinz/vim-janah'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'NLKNguyen/papercolor-theme'
+"Plug 'Blevs/vim-dzo'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'haystackandroid/carbonized'
+"Plug 'gwutz/vim-materialtheme'
+"Plug '29decibel/codeschool-vim-theme'
+"Plug 'scottymoon/vim-twilight'
+"Plug 'juanedi/predawn.vim'
+"Plug 'parkerault/onivim-theme-hybrid'
+"Plug 'habamax/vim-habamax'
+"Plug 'tomasiser/vim-code-dark'
+"Plug 'savq/melange'
 
-  " ========== Indents ==========
-  Plug 'yggdroot/indentline'
+" ========== Indents ==========
+Plug 'yggdroot/indentline'
 
-  " ########## Images ##########
-  Plug 'ashisha/image.vim'
+" ########## Images ##########
+"Plug 'ashisha/image.vim'
 
-  " ========== Random ==========
-  "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-  "Plug 'tsony-tsonev/nerdtree-git-plugin'
-  "Plug 'ryanoasis/vim-devicons'
+" ========== Random ==========
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"Plug 'tsony-tsonev/nerdtree-git-plugin'
+"Plug 'ryanoasis/vim-devicons'
 
-  call plug#end()
+call plug#end()
 
-  " ########## Indents ##########
-  let g:indentLine_char_list = ['│', '│', '│', '│']
-  set list
-  set listchars=tab:\│\ ,trail:·
-  " ----------
-  "set lcs+=space:.
-  "set list!
+" ########## Indents ##########
+let g:indentLine_char_list = ['│', '│', '│', '│']
+set list
+set listchars=tab:\│\ ,trail:·
+" ----------
+"set lcs+=space:.
+"set list!
 
-  "au BufRead *.png,*.jpg,*.jpeg :call DisplayImage()
+"au BufRead *.png,*.jpg,*.jpeg :call DisplayImage()
 
-  " ########## Main ##########
-  " json as jsonc
+" ########## Main ##########
+" json as jsonc
 
-  :let mapleader = "\<Space>"
+:let mapleader = "\<Space>"
 
-  augroup JsonToJsonc
-      autocmd! FileType json set filetype=jsonc
-  augroup END
+augroup JsonToJsonc
+  autocmd! FileType json set filetype=jsonc
+augroup END
 
-  "set cursorcolumn
-  set colorcolumn=120
+"set cursorcolumn
+set colorcolumn=120
 
-  " j/k will move virtual lines (lines that wrap)
-  noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-  noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" j/k will move virtual lines (lines that wrap)
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-  set relativenumber
-  set number
+set relativenumber
+set number
 
-  set smarttab
-  set cindent
-  set tabstop=2
-  set shiftwidth=2
-  " always uses ppaces instead of tab characters
-  set expandtab
+set smarttab
+set cindent
+set tabstop=2
+set shiftwidth=2
+" always uses ppaces instead of tab characters
+set expandtab
 
-  "indent
-  set backspace=indent,eol,start
-  set autoindent
-  set smartindent
-  set cindent
-  set backspace=indent,eol,start
+"indent
+set backspace=indent,eol,start
+set autoindent
+set smartindent
+set cindent
+set backspace=indent,eol,start
 
-  let g:vim_json_syntax_conceal = 0
-  set conceallevel=0
+let g:vim_json_syntax_conceal = 0
+set conceallevel=0
 
-  " COLORS SETTINGS
+" ===== ONEDARK SETTINGS =====
 
-  "let g:onedark_terminal_italics = 1
-  "let g:onedark_hide_endofbuffer = 1
+"let g:onedark_terminal_italics = 1
+"let g:onedark_hide_endofbuffer = 1
+
+" ===== SOLARIZED SETTINGS =====
+
+"let g:solarized_termcolors = 16
+"let g:solarized_contrast= "low"
+let g:solarized_visibility= "high"
+let g:solarized_diffmode= "high"
+let g:solarized_termtrans= 0
+let g:solarized_statusline= "flat"
+let g:solarized_old_cursor_style = 1
+
+syntax on
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"set termguicolors
+
+"set background=dark
+
+let g:gruvbit_contrast_dark = 'soft'
+let g:gruvbox_bold = 1
+"
+" ===== GRUVBIT SETTINGS =====
+" Italics
+augroup colorscheme_change | au!
+  au ColorScheme gruvbit hi Comment gui=italic cterm=italic
+augroup END
+" Bold statements
+func! s:gruvbit_setup() abort
+  hi Comment gui=italic cterm=italic
+  hi Statement gui=bold cterm=bold
+endfunc
+
+augroup colorscheme_change | au!
+  au ColorScheme gruvbit call s:gruvbit_setup()
+augroup END
+" Transbg
+let g:gruvbit_transp_bg = v:true
 
 
-  "let g:solarized_termcolors = 16
-  "let g:solarized_contrast= "low"
-  "let g:solarized_visibility= "high"
-  "let g:solarized_diffmode= "high"
-  "let g:solarized_termtrans= 0
-  "let g:solarized_statusline= "flat"
-  "let g:solarized_old_cursor_style = 1
+let g:tokyonight_style = "storm"
 
-  syntax on
-  set background=dark
+" ===== NIGHTFOX SETTINGS =====
 
-  let g:gruvbox_contrast_dark = 'hard'
-  let g:gruvbox_bold = 1
-  "
-  " ===== GRUVBIT SETTINGS =====
-  " Italics
-  augroup colorscheme_change | au!
-      au ColorScheme gruvbit hi Comment gui=italic cterm=italic
-  augroup END
-  " Bold statements
-  func! s:gruvbit_setup() abort
-      hi Comment gui=italic cterm=italic
-      hi Statement gui=bold cterm=bold
-  endfunc
+"lua << EOF
 
-  augroup colorscheme_change | au!
-      au ColorScheme gruvbit call s:gruvbit_setup()
-  augroup END
-  " Transbg
-  let g:gruvbit_transp_bg = v:true
-  let g:gruvbox_transp_bg = v:true
+"local nightfox = require('nightfox')
+"nightfox.setup({
+"fox = "nordfox", -- change the colorscheme to use nordfox
+"visual = true, 
+"alt_nc = true,
+"search = true, 
+"styles = {
+"comments = "italic", -- change style of comments to be italic keywords = "bold", -- change style of keywords to be bold
+"functions = "bold" -- styles can be a comma separated list
+"},
+"colors = {
+"--bg = "#353c4a", -- Override the red color for MAX POWER
+"bg = "#2b3943", -- Override the red color for MAX POWER
+"--bg = "#39404f", -- Override the red color for MAX POWER
+"},
+"})
+"nightfox.load()
 
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  set termguicolors
+"EOF
 
-  let g:tokyonight_style = "storm"
-  "colorscheme gruvbit
+" ===== ZENBURN SETTINGS =====
+let g:zenburn_disable_Label_underline = 1
+"let g:zenburn_transparent = 1
+let g:zenburn_old_Visual = 1
+let g:zenburn_enable_TagHighlight=1
 
-  "lua << EOF
-  "local nightfox = require('nightfox')
-
-  "-- This function set the configuration of nightfox. If a value is not passed in the setup function
-  "-- it will be taken from the default configuration above
-  "nightfox.setup({
-    "fox = "nordfox", -- change the colorscheme to use nordfox
-    "alt_nc = true,
-    "visual = true, 
-    "search = true, 
-    "styles = {
-      "comments = "italic", -- change style of comments to be italic
-      "keywords = "bold", -- change style of keywords to be bold
-      "functions = "bold" -- styles can be a comma separated list
-    "},
-  "})
-
-  "-- Load the configuration set above and apply the colorscheme
-  "nightfox.load()
-  "EOF
-
-  colorscheme solarized8
+colorscheme zenburn
 
 " ########## Maximizer ##########
 nnoremap <leader>m :MaximizerToggle<CR>
@@ -323,9 +336,11 @@ nnoremap <silent> <leader>'' :Buffers<CR>
 :map <F9> :cnf
 "nnoremap <C-f> :Ag **/*<Cr>
 
-" ########## Random ##########
+" ########## Random  & CursorColumn bg ##########
 cabb W w
 cabb Q q
+
+"hi CursorColumn guibg=#404040
 
 " ########## Coc stuff ##########
 
@@ -474,3 +489,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
