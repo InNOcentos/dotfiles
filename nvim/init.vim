@@ -8,11 +8,23 @@ Plug 'szw/vim-maximizer'
 
 " ========== backgound ==========
 "Plug 'tribela/vim-transparent'
+" ========== Javascript.==========
+Plug 'pangloss/vim-javascript'
 
 " ========== Typescript, linter, snippets... ==========
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+"Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'saadparwaiz1/cmp_luasnip'
+"Plug 'L3MON4D3/LuaSnip'
+
+"Plug 'prettier/vim-prettier', {
+  "\ 'do': 'yarn install --frozen-lockfile --production',
+  "\ 'branch': 'release/0.x'
+  "\ }
 " ========== Navigation ==========
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -48,37 +60,47 @@ Plug 'elzr/vim-json'
 
 " ========== Themes ========== 
 "Plug 'acepukas/vim-zenburn'
-Plug 'morhetz/gruvbox'
-Plug 'habamax/vim-gruvbit'
-"Plug 'sainnhe/edge'
+"Plug 'morhetz/gruvbox'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'sjl/badwolf'
+"Plug 'vim-scripts/grishin-color-scheme'
+"Plug 'gilgigilgil/anderson.vim'
+"Plug 'relastle/bluewery.vim'
+"Plug 'habamax/vim-gruvbit'
+"Plug 'navarasu/onedark.nvim'
+Plug 'sainnhe/edge'
 "Plug 'vim-scripts/billw.vim'
-"Plug 'lifepillar/vim-solarized8'
 "Plug 'KeitaNakamura/neodark.vim'
-"Plug 'EdenEast/nightfox.nvim'
 "Plug 'sonph/onehalf'
-"Plug 'joshdick/onedark.vim'
 "Plug 'lifepillar/vim-gruvbox8'
-"Plug 'altercation/vim-colors-solarized'
 "Plug 'sainnhe/everforest'
-"Plug 'dracula/vim'
 "Plug 'Rigellute/rigel'
 "Plug 'savq/melange'
-"Plug 'sainnhe/sonokai'
-"Plug 'doums/darcula'
-"Plug 'dunstontc/vim-vscode-theme'
+Plug 'sainnhe/sonokai'
+Plug 'doums/darcula'
 "Plug 'mikker/seoul256-iTerm'
 "Plug 'mhartington/oceanic-next'
 "Plug 'junegunn/seoul256.vim'
 "Plug 'gruvbox-community/gruvbox'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'vim-scripts/Ambient-Color-Scheme'
 "Plug 'vivkin/flatland.vim'
-"Plug 'glepnir/oceanic-material'
-"Plug 'softmotions/vim-dark-frost-theme'
-"Plug 'filipekiss/night-hawk'
+Plug 'softmotions/vim-dark-frost-theme'
+Plug 'filipekiss/night-hawk'
 "Plug 'damage220/solas.vim'
+"Plug 'glepnir/oceanic-material'
 "Plug 'cocopon/iceberg.vim'
-"Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'dunstontc/vim-vscode-theme'
+"Plug 'dracula/vim'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'jhlgns/naysayer88.vim'
+Plug 'lifepillar/vim-solarized8'
+"Plug 'EdenEast/nightfox.nvim'
+"Plug 'parkerault/onivim-theme-hybrid'
+"Plug 'nanotech/jellybeans.vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'olimorris/onedarkpro.nvim'
 "Plug 'carakan/new-railscasts-theme'
 "Plug 'vim-scripts/Zenburn'
 "Plug 'mdlerch/tungsten.vim'
@@ -87,7 +109,6 @@ Plug 'habamax/vim-gruvbit'
 "Plug 'conweller/muted.vim'
 "Plug 'AlxHnr/clear_colors'
 "Plug 'mhinz/vim-janah'
-"Plug 'nanotech/jellybeans.vim'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'Blevs/vim-dzo'
 "Plug 'terryma/vim-multiple-cursors'
@@ -96,9 +117,7 @@ Plug 'habamax/vim-gruvbit'
 "Plug '29decibel/codeschool-vim-theme'
 "Plug 'scottymoon/vim-twilight'
 "Plug 'juanedi/predawn.vim'
-"Plug 'parkerault/onivim-theme-hybrid'
 "Plug 'habamax/vim-habamax'
-"Plug 'tomasiser/vim-code-dark'
 "Plug 'savq/melange'
 
 " ========== Indents ==========
@@ -167,7 +186,7 @@ set conceallevel=0
 
 " ===== SOLARIZED SETTINGS =====
 
-"let g:solarized_termcolors = 16
+let g:solarized_termcolors = 16
 "let g:solarized_contrast= "low"
 let g:solarized_visibility= "high"
 let g:solarized_diffmode= "high"
@@ -180,10 +199,10 @@ syntax on
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "set termguicolors
 
-"set background=dark
+set background=dark
 
 let g:gruvbit_contrast_dark = 'soft'
-let g:gruvbox_bold = 1
+"let g:gruvbox_bold = 1
 "
 " ===== GRUVBIT SETTINGS =====
 " Italics
@@ -207,35 +226,53 @@ let g:tokyonight_style = "storm"
 
 " ===== NIGHTFOX SETTINGS =====
 
-"lua << EOF
-
-"local nightfox = require('nightfox')
-"nightfox.setup({
-"fox = "nordfox", -- change the colorscheme to use nordfox
-"visual = true, 
-"alt_nc = true,
-"search = true, 
-"styles = {
-"comments = "italic", -- change style of comments to be italic keywords = "bold", -- change style of keywords to be bold
-"functions = "bold" -- styles can be a comma separated list
-"},
-"colors = {
-"--bg = "#353c4a", -- Override the red color for MAX POWER
-"bg = "#2b3943", -- Override the red color for MAX POWER
-"--bg = "#39404f", -- Override the red color for MAX POWER
-"},
-"})
-"nightfox.load()
-
-"EOF
 
 " ===== ZENBURN SETTINGS =====
 let g:zenburn_disable_Label_underline = 1
-"let g:zenburn_transparent = 1
 let g:zenburn_old_Visual = 1
 let g:zenburn_enable_TagHighlight=1
+"let g:zenburn_transparent = 1
 
-colorscheme zenburn
+"lua << EOF
+
+"local onedark = require('onedark')
+"onedark.setup  {
+    "-- Main options --
+    "style = 'cool', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    "transparent = false,  -- Show/hide background
+    "term_colors = true, -- Change terminal color as per the selected theme style
+    "ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+    "-- toggle theme style ---
+    "toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+    "toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+
+    "-- Change code style ---
+    "-- Options are italic, bold, underline, none
+    "-- You can configure multiple style with comma seperated, For e.., keywords = 'italic,bold'
+    "code_style = {
+        "comments = 'italic',
+        "keywords = 'none',
+        "functions = 'none',
+        "strings = 'none',
+        "variables = 'none'
+    "},
+
+    "-- Custom Highlights --
+    "colors = {}, -- Override default colors
+    "highlights = {}, -- Override highlight groups
+
+    "-- Plugins Config --
+    "diagnostics = {
+        "darker = true, -- darker colors for diagnostic
+        "undercurl = true,   -- use undercurl instead of underline for diagnostics
+        "background = true,    -- use background color for virtual text
+    "},
+"}
+"onedark.load()
+"EOF
+
+
+colorscheme gruvbox
 
 " ########## Maximizer ##########
 nnoremap <leader>m :MaximizerToggle<CR>
@@ -269,8 +306,21 @@ nmap<leader>gs :G<CR>
 nmap<leader>gj :diffget //2<CR>
 nmap<leader>gk :diffget //3<CR>
 nnoremap <leader>gb :Git checkout<CR>
-nnoremap <leader>gd :Git diff<CR>
+"nnoremap <leader>gd :Git diff<CR>
+nnoremap <leader>gd :G difftool -y<CR>
+nnoremap <leader>gfd :Gvdiffsplit<CR>
 nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gl :G log<CR>
+" dv - diff for file (in git status)
+" Gvdiffsplit - diff for file inside file
+" G difftool -y - all diffs for all files in tabs
+" coo checkout to commit
+" G log - commit history
+" CONFGLICTS
+" Gvdiffsplit!
+" d2o - left
+" d3o - right
+" help fugitive
 hi DiffAdd gui=NONE guifg=yellow guibg=black
 
 let g:NERDTreeGitStatusWithFlags = 1
@@ -343,45 +393,20 @@ cabb Q q
 "hi CursorColumn guibg=#404040
 
 " ########## Coc stuff ##########
-
-" vim-prettier
-"let g:prettier#quickfix_enabled = 0
-"let g:prettier#quickfix_auto_focus = 0
-" prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" run prettier on save
-"let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-
-" Highlight currently open buffer in NERDTree
-
+set hidden 
 let g:coc_disable_startup_warning = 1
-
-" coc config
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:coc_global_extensions = [
-  "\ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
   \ 'coc-json', 
   \ 'coc-prettier', 
   \ ]
-" from readme
-" if hidden is not set, TextEdit might fail.
-set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
-
-" don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" always show signcolumns
 set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -392,27 +417,16 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_nfo()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -422,72 +436,45 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
 nmap <F2> <Plug>(coc-rename)
-
-" Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent> <C-d> <Plug>(coc-range-select)
 xmap <silent> <C-d> <Plug>(coc-range-select)
 
-" Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
-" Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-" use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Using CocList
-" Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
 

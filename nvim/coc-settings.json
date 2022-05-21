@@ -1,10 +1,10 @@
 {
-  "eslint.format.enable": true,
+  //"eslint.format.enable": true,
   "eslint.run": "onSave",
-  "eslint.autoFixOnSave": true,
-  "eslint.packageManager": "npm",
-  "prettier.singleQuote": true,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
-  "prettier.tabWidth": 2,
-  "prettier.printWidth": 120
+  //"eslint.autoFixOnSave": true,
+  //"eslint.packageManager": "npm",
+  //"prettier.singleQuote": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"]
+  //"prettier.tabWidth": 2,
+  //"prettier.printWidth": 120
 }
