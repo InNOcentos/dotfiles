@@ -1,74 +1,109 @@
-call plug#begin('~/.vim/plugged')
+  call plug#begin('~/.vim/plugged')
 
-" ========== Debugger ==========
-Plug 'puremourning/vimspector'
+  " ========== Debugger ==========
+  "Plug 'puremourning/vimspector'
 
-" ========== Maximizer ==========
-Plug 'szw/vim-maximizer'
+  " ========== Maximizer ==========
+  "Plug 'szw/vim-maximizer'
 
-" ========== backgound ==========
-"Plug 'tribela/vim-transparent'
-" ========== Javascript.==========
-Plug 'pangloss/vim-javascript'
+  " ========== Database ==========
+  "Plug 'tpope/vim-dadbod'
+  "Plug 'kristijanhusak/vim-dadbod-ui'
 
-" ========== Typescript, linter, snippets... ==========
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+  " ========== Javascript.==========
+  "Plug 'pangloss/vim-javascript'
+  Plug 'nvim-treesitter/nvim-treesitter'
 
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'hrsh7th/nvim-cmp'
-"Plug 'hrsh7th/cmp-nvim-lsp'
-"Plug 'saadparwaiz1/cmp_luasnip'
-"Plug 'L3MON4D3/LuaSnip'
+  " ========== Typescript, linter, snippets... ==========
 
-"Plug 'prettier/vim-prettier', {
-  "\ 'do': 'yarn install --frozen-lockfile --production',
-  "\ 'branch': 'release/0.x'
-  "\ }
-" ========== Navigation ==========
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim' "Plug 'stsewd/fzf-checkout.vim'
-Plug 'eugen0329/vim-esearch'
-Plug 'christoomey/vim-tmux-navigator'
+  "Plug 'neovim/nvim-lspconfig'
+  "Plug 'hrsh7th/nvim-cmp'
+  "Plug 'hrsh7th/cmp-nvim-lsp'
+  "Plug 'saadparwaiz1/cmp_luasnip'
+  "Plug 'L3MON4D3/LuaSnip' 
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
-"Plug 'dyng/ctrlsf.vim'
+  "Plug 'neovim/nvim-lspconfig'
+  "Plug 'hrsh7th/nvim-cmp'
+  "Plug 'hrsh7th/cmp-nvim-lsp'
+  "Plug 'saadparwaiz1/cmp_luasnip'
+  "Plug 'L3MON4D3/LuaSnip'
 
-" ========== Git ==========
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
+  "Plug 'prettier/vim-prettier', {
+    "\ 'do': 'yarn install --frozen-lockfile --production',
+    "\ 'branch': 'release/0.x'
+    "\ }
+  " ========== Navigation ==========
+  Plug 'scrooloose/nerdtree'
+  "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  "Plug 'junegunn/fzf.vim' "Plug 'stsewd/fzf-checkout.vim'
+  "Plug 'eugen0329/vim-esearch'
+  Plug 'christoomey/vim-tmux-navigator'
 
-" ========== Commenter ==========
-Plug 'scrooloose/nerdcommenter'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 
-" ========== Pairs ==========
-Plug 'jiangmiao/auto-pairs'
+  "Plug 'ryanoasis/vim-devicons'
 
-" ========== Npm ==========
-"Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+  "Plug 'nvim-lua/plenary.nvim'
+  "Plug 'nvim-telescope/telescope.nvim'
+  "Plug 'dyng/ctrlsf.vim'
 
-" ========== Json ==========
-Plug 'elzr/vim-json'
+  " ========== Git ==========
+  "Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-airline/vim-airline'
 
-" ========== C syntax ==========
-"Plug 'vim-scripts/c.vim'
+  " ========== Commenter ==========
+  Plug 'scrooloose/nerdcommenter'
 
-" ========== Themes ========== 
-"Plug 'acepukas/vim-zenburn'
-"Plug 'morhetz/gruvbox'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'sjl/badwolf'
+  " ========== Pairs ==========
+  "Plug 'jiangmiao/auto-pairs'
+
+  " ========== Npm ==========
+  "Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+
+  " ========== Json ==========
+  "Plug 'elzr/vim-json'
+
+  " ========== C syntax ==========
+  "Plug 'vim-scripts/c.vim'
+
+  " ========== Themes ========== 
+"Plug 'connorholyday/vim-snazzy'
+"Plug 'haystackandroid/vim-crunchbang'
+"Plug 'sonph/onehalf'
+"Plug 'jnurmine/Zenburn'
+"Plug 'phanviet/vim-monokai-pro'
+Plug 'acepukas/vim-zenburn'
+Plug 'morhetz/gruvbox'
+Plug 'savq/melange'
+"Plug 'ErichDonGubler/vim-sublime-monokai'
+"Plug 'Rigellute/shades-of-purple.vim'
+"Plug 'sjl/badwolf'
+"Plug 'navarasu/onedark.nvim'
+Plug 'sainnhe/sonokai'
+"Plug 'doums/darcula'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'Mofiqul/vscode.nvim'
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'EdenEast/nightfox.nvim'
+"Plug 'tomasiser/vim-code-dark'
+Plug 'olimorris/onedarkpro.nvim'
+"Plug 'patstockwell/vim-monokai-tasty'
+"Plug 'crusoexia/vim-monokai'
+"Plug 'Tiriel/sublimemonokai'
+"Plug 'tomasiser/vim-code-dark'
+"Plug 'patstockwell/vim-monokai-tasty'
+"Plug 'louispan/vim-monokai-black'
 "Plug 'vim-scripts/grishin-color-scheme'
 "Plug 'gilgigilgil/anderson.vim'
 "Plug 'relastle/bluewery.vim'
 "Plug 'habamax/vim-gruvbit'
-"Plug 'navarasu/onedark.nvim'
-Plug 'sainnhe/edge'
+"Plug 'sainnhe/edge'
 "Plug 'vim-scripts/billw.vim'
 "Plug 'KeitaNakamura/neodark.vim'
 "Plug 'sonph/onehalf'
@@ -76,31 +111,23 @@ Plug 'sainnhe/edge'
 "Plug 'sainnhe/everforest'
 "Plug 'Rigellute/rigel'
 "Plug 'savq/melange'
-Plug 'sainnhe/sonokai'
-Plug 'doums/darcula'
 "Plug 'mikker/seoul256-iTerm'
 "Plug 'mhartington/oceanic-next'
 "Plug 'junegunn/seoul256.vim'
 "Plug 'gruvbox-community/gruvbox'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 "Plug 'vim-scripts/Ambient-Color-Scheme'
 "Plug 'vivkin/flatland.vim'
-Plug 'softmotions/vim-dark-frost-theme'
-Plug 'filipekiss/night-hawk'
+"Plug 'softmotions/vim-dark-frost-theme'
+"Plug 'filipekiss/night-hawk'
 "Plug 'damage220/solas.vim'
 "Plug 'glepnir/oceanic-material'
 "Plug 'cocopon/iceberg.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'dunstontc/vim-vscode-theme'
 "Plug 'dracula/vim'
 "Plug 'altercation/vim-colors-solarized'
-Plug 'jhlgns/naysayer88.vim'
-Plug 'lifepillar/vim-solarized8'
-"Plug 'EdenEast/nightfox.nvim'
+"Plug 'jhlgns/naysayer88.vim'
 "Plug 'parkerault/onivim-theme-hybrid'
 "Plug 'nanotech/jellybeans.vim'
-Plug 'tomasiser/vim-code-dark'
-Plug 'olimorris/onedarkpro.nvim'
 "Plug 'carakan/new-railscasts-theme'
 "Plug 'vim-scripts/Zenburn'
 "Plug 'mdlerch/tungsten.vim'
@@ -118,9 +145,10 @@ Plug 'olimorris/onedarkpro.nvim'
 "Plug 'scottymoon/vim-twilight'
 "Plug 'juanedi/predawn.vim'
 "Plug 'habamax/vim-habamax'
-"Plug 'savq/melange'
+"Plug 'Everblush/everblush.vim'
 
 " ========== Indents ==========
+"Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'yggdroot/indentline'
 
 " ########## Images ##########
@@ -129,14 +157,29 @@ Plug 'yggdroot/indentline'
 " ========== Random ==========
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
-"Plug 'ryanoasis/vim-devicons'
+
 
 call plug#end()
-
 " ########## Indents ##########
+
+
+"lua << EOF
+"vim.opt.list = true
+"vim.opt.listchars:append("space:⋅")
+
+"require("indent_blankline").setup {
+    "space_char_blankline = " ",
+    "show_current_context = true,
+    "show_current_context_start = true,
+"}
+"EOF
+
+
 let g:indentLine_char_list = ['│', '│', '│', '│']
 set list
 set listchars=tab:\│\ ,trail:·
+filetype plugin on
+
 " ----------
 "set lcs+=space:.
 "set list!
@@ -146,6 +189,12 @@ set listchars=tab:\│\ ,trail:·
 " ########## Main ##########
 " json as jsonc
 
+" CLIpboard
+set clipboard+=unnamedplus
+
+set ttimeout        " time out for key codes
+set ttimeoutlen=0 " wait up to 100ms after Esc for special key
+
 :let mapleader = "\<Space>"
 
 augroup JsonToJsonc
@@ -153,7 +202,7 @@ augroup JsonToJsonc
 augroup END
 
 "set cursorcolumn
-set colorcolumn=120
+"set colorcolumn=120
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -186,15 +235,14 @@ set conceallevel=0
 
 " ===== SOLARIZED SETTINGS =====
 
-let g:solarized_termcolors = 16
-"let g:solarized_contrast= "low"
+"let g:solarized_termcolors = 256
+let g:solarized_contrast= "low"
 let g:solarized_visibility= "high"
 let g:solarized_diffmode= "high"
 let g:solarized_termtrans= 0
 let g:solarized_statusline= "flat"
 let g:solarized_old_cursor_style = 1
-
-syntax on
+syntax enable
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "set termguicolors
@@ -228,9 +276,9 @@ let g:tokyonight_style = "storm"
 
 
 " ===== ZENBURN SETTINGS =====
-let g:zenburn_disable_Label_underline = 1
-let g:zenburn_old_Visual = 1
-let g:zenburn_enable_TagHighlight=1
+"let g:zenburn_disable_Label_underline = 1
+"let g:zenburn_old_Visual = 1
+"let g:zenburn_enable_TagHighlight=1
 "let g:zenburn_transparent = 1
 
 "lua << EOF
@@ -272,7 +320,64 @@ let g:zenburn_enable_TagHighlight=1
 "EOF
 
 
-colorscheme gruvbox
+
+"lua << EOF
+"require("nightfox").setup({
+  "options = {
+    "styles = {
+      "comments = "italic",
+      "keywords = "bold",
+      "types = "italic,bold",
+    "}
+  "},
+  "palettes = {
+    "-- Custom duskfox with black background
+  "nordfox = {
+    "-- A palette also defines the following:
+    "--   bg0, bg1, bg2, bg3, bg4, fg0, fg1, fg2, fg3, sel0, sel1, comment
+    "--
+    "-- These are the different foreground and background shades used by the theme.
+    "-- The base bg and fg is 1, 0 is normally the dark alternative. The others are
+    "-- incrementally lighter versions.
+    "bg1 = "#2e3440",
+
+    "-- sel is different types of selection colors.
+    "sel0 = "#3e4a5b", -- Popup bg, visual selection bg
+    "sel1 = "#4f6074", -- Popup sel bg, search bg
+
+    "-- comment is the definition of the comment color.
+    "comment = "#60728a",
+  "}},
+  "specs = {
+    "all = {
+      "inactive = "bg0", -- Default value for other styles
+    "},
+    "duskfox = {
+      "inactive = "#090909", -- Slightly lighter then black background
+    "},
+  "},
+  "groups = {
+    "all = {
+      "NormalNC = { fg = "fg1", bg = "inactive" }, -- Non-current windows
+    "},
+  "},
+"})
+"EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+colorscheme sonokai
 
 " ########## Maximizer ##########
 nnoremap <leader>m :MaximizerToggle<CR>
@@ -309,7 +414,7 @@ nnoremap <leader>gb :Git checkout<CR>
 "nnoremap <leader>gd :Git diff<CR>
 nnoremap <leader>gd :G difftool -y<CR>
 nnoremap <leader>gfd :Gvdiffsplit<CR>
-nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gC :Git commit<CR>
 nnoremap <leader>gl :G log<CR>
 " dv - diff for file (in git status)
 " Gvdiffsplit - diff for file inside file
@@ -373,9 +478,9 @@ inoremap jk <ESC> ??
 "let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 "FZF MAPPINGS
-nnoremap <silent>; :GFiles<CR>
-nnoremap <silent> <leader>; :Files<CR>
-nnoremap <silent> <leader>'' :Buffers<CR>
+nnoremap <silent>; :Telescope git_files<CR>
+nnoremap <silent> <leader>; :Telescope find_files<CR>
+nnoremap <silent> <leader>ff :Telescope live_grep<CR>
 "nnoremap <leader>ff :Rg! 
 "nnoremap ; :GFiles<CR>
 "nnoremap ; :GFiles<CR>
@@ -393,6 +498,7 @@ cabb Q q
 "hi CursorColumn guibg=#404040
 
 " ########## Coc stuff ##########
+inoremap <silent><expr> <c-space> coc#refresh()
 set hidden 
 let g:coc_disable_startup_warning = 1
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -478,3 +584,8 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+
+" transparent
+hi Normal guibg=NONE ctermbg=NONE
+" json stuff
+let g:vim_json_conceal=0
