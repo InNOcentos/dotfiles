@@ -12,7 +12,7 @@
 
   " ========== Javascript.==========
   "Plug 'pangloss/vim-javascript'
-  Plug 'nvim-treesitter/nvim-treesitter'
+  "Plug 'nvim-treesitter/nvim-treesitter'
 
   " ========== Typescript, linter, snippets... ==========
 
@@ -47,7 +47,6 @@
 
   "Plug 'ryanoasis/vim-devicons'
 
-  "Plug 'nvim-lua/plenary.nvim'
   "Plug 'nvim-telescope/telescope.nvim'
   "Plug 'dyng/ctrlsf.vim'
 
@@ -78,25 +77,31 @@
 "Plug 'sonph/onehalf'
 "Plug 'jnurmine/Zenburn'
 "Plug 'phanviet/vim-monokai-pro'
-Plug 'acepukas/vim-zenburn'
-Plug 'morhetz/gruvbox'
+"Plug 'acepukas/vim-zenburn'
+"Plug 'morhetz/gruvbox'
 Plug 'savq/melange'
+Plug 'fratajczak/one-monokai-vim'
+Plug 'catppuccin/vim'
+"Plug 'sainnhe/sonokai'
+"Plug 'baskerville/bubblegum'
+Plug 'flrnd/candid.vim'
+Plug 'rafamadriz/neon'
+"Plug 'kaicataldo/material.vim'
 "Plug 'ErichDonGubler/vim-sublime-monokai'
 "Plug 'Rigellute/shades-of-purple.vim'
 "Plug 'sjl/badwolf'
-"Plug 'navarasu/onedark.nvim'
-Plug 'sainnhe/sonokai'
-"Plug 'doums/darcula'
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'Mofiqul/vscode.nvim'
-"Plug 'lifepillar/vim-solarized8'
-"Plug 'EdenEast/nightfox.nvim'
+Plug 'navarasu/onedark.nvim'
+Plug 'doums/darcula'
+Plug 'arcticicestudio/nord-vim'
+Plug 'Mofiqul/vscode.nvim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'EdenEast/nightfox.nvim'
 "Plug 'tomasiser/vim-code-dark'
 Plug 'olimorris/onedarkpro.nvim'
 "Plug 'patstockwell/vim-monokai-tasty'
 "Plug 'crusoexia/vim-monokai'
 "Plug 'Tiriel/sublimemonokai'
-"Plug 'tomasiser/vim-code-dark'
+Plug 'tomasiser/vim-code-dark'
 "Plug 'patstockwell/vim-monokai-tasty'
 "Plug 'louispan/vim-monokai-black'
 "Plug 'vim-scripts/grishin-color-scheme'
@@ -106,8 +111,8 @@ Plug 'olimorris/onedarkpro.nvim'
 "Plug 'sainnhe/edge'
 "Plug 'vim-scripts/billw.vim'
 "Plug 'KeitaNakamura/neodark.vim'
-"Plug 'sonph/onehalf'
-"Plug 'lifepillar/vim-gruvbox8'
+Plug 'sonph/onehalf'
+Plug 'lifepillar/vim-gruvbox8'
 "Plug 'sainnhe/everforest'
 "Plug 'Rigellute/rigel'
 "Plug 'savq/melange'
@@ -148,8 +153,8 @@ Plug 'olimorris/onedarkpro.nvim'
 "Plug 'Everblush/everblush.vim'
 
 " ========== Indents ==========
-"Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'yggdroot/indentline'
+Plug 'lukas-reineke/indent-blankline.nvim'
+"Plug 'yggdroot/indentline'
 
 " ########## Images ##########
 "Plug 'ashisha/image.vim'
@@ -175,10 +180,10 @@ call plug#end()
 "EOF
 
 
-let g:indentLine_char_list = ['│', '│', '│', '│']
-set list
-set listchars=tab:\│\ ,trail:·
-filetype plugin on
+"let g:indentLine_char_list = ['│', '│', '│', '│']
+"set list
+"set listchars=tab:\│\ ,trail:·
+"filetype plugin on
 
 " ----------
 "set lcs+=space:.
@@ -245,7 +250,7 @@ let g:solarized_old_cursor_style = 1
 syntax enable
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"set termguicolors
+set termguicolors
 
 set background=dark
 
@@ -263,121 +268,111 @@ func! s:gruvbit_setup() abort
   hi Statement gui=bold cterm=bold
 endfunc
 
-augroup colorscheme_change | au!
-  au ColorScheme gruvbit call s:gruvbit_setup()
-augroup END
-" Transbg
-let g:gruvbit_transp_bg = v:true
+  augroup colorscheme_change | au!
+    au ColorScheme gruvbit call s:gruvbit_setup()
+  augroup END
+  " Transbg
+  let g:gruvbit_transp_bg = v:true
 
 
-let g:tokyonight_style = "storm"
+  let g:tokyonight_style = "storm"
 
-" ===== NIGHTFOX SETTINGS =====
+  " ===== NIGHTFOX SETTINGS =====
 
 
-" ===== ZENBURN SETTINGS =====
-"let g:zenburn_disable_Label_underline = 1
-"let g:zenburn_old_Visual = 1
-"let g:zenburn_enable_TagHighlight=1
-"let g:zenburn_transparent = 1
+  " ===== ZENBURN SETTINGS =====
+  "let g:zenburn_disable_Label_underline = 1
+  "let g:zenburn_old_Visual = 1
+  "let g:zenburn_enable_TagHighlight=1
+  "let g:zenburn_transparent = 1
+
+  "lua << EOF
+
+  "local onedark = require('onedark')
+  "onedark.setup  {
+      "-- Main options --
+      "style = 'cool', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+      "transparent = false,  -- Show/hide background
+      "term_colors = true, -- Change terminal color as per the selected theme style
+      "ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+      "-- toggle theme style ---
+      "toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+      "toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+
+      "-- Change code style ---
+      "-- Options are italic, bold, underline, none
+      "-- You can configure multiple style with comma seperated, For e.., keywords = 'italic,bold'
+      "code_style = {
+          "comments = 'italic',
+          "keywords = 'none',
+          "functions = 'none',
+          "strings = 'none',
+          "variables = 'none'
+      "},
+
+      "-- Custom Highlights --
+      "colors = {}, -- Override default colors
+      "highlights = {}, -- Override highlight groups
+
+      "-- Plugins Config --
+      "diagnostics = {
+          "darker = true, -- darker colors for diagnostic
+          "undercurl = true,   -- use undercurl instead of underline for diagnostics
+          "background = true,    -- use background color for virtual text
+      "},
+  "}
+  "onedark.load()
+  "EOF
+
+
 
 "lua << EOF
-
-"local onedark = require('onedark')
-"onedark.setup  {
-    "-- Main options --
-    "style = 'cool', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    "transparent = false,  -- Show/hide background
-    "term_colors = true, -- Change terminal color as per the selected theme style
-    "ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-    "-- toggle theme style ---
-    "toggle_style_key = '<leader>ts', -- Default keybinding to toggle
-    "toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
-
-    "-- Change code style ---
-    "-- Options are italic, bold, underline, none
-    "-- You can configure multiple style with comma seperated, For e.., keywords = 'italic,bold'
-    "code_style = {
-        "comments = 'italic',
-        "keywords = 'none',
-        "functions = 'none',
-        "strings = 'none',
-        "variables = 'none'
+  "require("nightfox").setup({
+    "options = {
+      "styles = {
+        "comments = "italic",
+        "keywords = "bold",
+        "types = "italic,bold",
+      "}
     "},
+    "palettes = {
+      "-- Custom duskfox with black background
+    "nordfox = {
+      "-- A palette also defines the following:
+      "--   bg0, bg1, bg2, bg3, bg4, fg0, fg1, fg2, fg3, sel0, sel1, comment
+      "--
+      "-- These are the different foreground and background shades used by the theme.
+      "-- The base bg and fg is 1, 0 is normally the dark alternative. The others are
+      "-- incrementally lighter versions.
+      "bg1 = "#2e3440",
 
-    "-- Custom Highlights --
-    "colors = {}, -- Override default colors
-    "highlights = {}, -- Override highlight groups
+      "-- sel is different types of selection colors.
+      "sel0 = "#3e4a5b", -- Popup bg, visual selection bg
+      "sel1 = "#4f6074", -- Popup sel bg, search bg
 
-    "-- Plugins Config --
-    "diagnostics = {
-        "darker = true, -- darker colors for diagnostic
-        "undercurl = true,   -- use undercurl instead of underline for diagnostics
-        "background = true,    -- use background color for virtual text
+      "-- comment is the definition of the comment color.
+      "comment = "#60728a",
+    "}},
+    "specs = {
+      "all = {
+        "inactive = "bg0", -- Default value for other styles
+      "},
+      "duskfox = {
+        "inactive = "#090909", -- Slightly lighter then black background
+      "},
     "},
-"}
-"onedark.load()
+    "groups = {
+      "all = {
+        "NormalNC = { fg = "fg1", bg = "inactive" }, -- Non-current windows
+      "},
+    "},
+  "})
+  "let g:material_theme_style = 'darker'
 "EOF
 
+colorscheme onedark
+"colorscheme onedarkpro
 
-
-"lua << EOF
-"require("nightfox").setup({
-  "options = {
-    "styles = {
-      "comments = "italic",
-      "keywords = "bold",
-      "types = "italic,bold",
-    "}
-  "},
-  "palettes = {
-    "-- Custom duskfox with black background
-  "nordfox = {
-    "-- A palette also defines the following:
-    "--   bg0, bg1, bg2, bg3, bg4, fg0, fg1, fg2, fg3, sel0, sel1, comment
-    "--
-    "-- These are the different foreground and background shades used by the theme.
-    "-- The base bg and fg is 1, 0 is normally the dark alternative. The others are
-    "-- incrementally lighter versions.
-    "bg1 = "#2e3440",
-
-    "-- sel is different types of selection colors.
-    "sel0 = "#3e4a5b", -- Popup bg, visual selection bg
-    "sel1 = "#4f6074", -- Popup sel bg, search bg
-
-    "-- comment is the definition of the comment color.
-    "comment = "#60728a",
-  "}},
-  "specs = {
-    "all = {
-      "inactive = "bg0", -- Default value for other styles
-    "},
-    "duskfox = {
-      "inactive = "#090909", -- Slightly lighter then black background
-    "},
-  "},
-  "groups = {
-    "all = {
-      "NormalNC = { fg = "fg1", bg = "inactive" }, -- Non-current windows
-    "},
-  "},
-"})
-"EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-colorscheme sonokai
 
 " ########## Maximizer ##########
 nnoremap <leader>m :MaximizerToggle<CR>
@@ -586,6 +581,6 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 " transparent
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 " json stuff
 let g:vim_json_conceal=0
