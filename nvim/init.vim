@@ -1,4 +1,6 @@
-  call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
+
+
 
   " ========== Debugger ==========
   "Plug 'puremourning/vimspector'
@@ -12,9 +14,21 @@
 
   " ========== Javascript.==========
   "Plug 'pangloss/vim-javascript'
-  "Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " ========== Typescript, linter, snippets... ==========
+
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-cmdline'
+"Plug 'hrsh7th/nvim-cmp'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'jose-elias-alvarez/null-ls.nvim'
+"Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+
 
   "Plug 'neovim/nvim-lspconfig'
   "Plug 'hrsh7th/nvim-cmp'
@@ -60,7 +74,8 @@
   Plug 'scrooloose/nerdcommenter'
 
   " ========== Pairs ==========
-  "Plug 'jiangmiao/auto-pairs'
+  Plug 'jiangmiao/auto-pairs'
+
 
   " ========== Npm ==========
   "Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
@@ -82,10 +97,14 @@
 Plug 'savq/melange'
 Plug 'fratajczak/one-monokai-vim'
 Plug 'catppuccin/vim'
+Plug 'shaunsingh/moonlight.nvim'
+Plug 'marcopaganini/termschool-vim-theme'
+Plug 'projekt0n/github-nvim-theme'
 "Plug 'sainnhe/sonokai'
 "Plug 'baskerville/bubblegum'
 Plug 'flrnd/candid.vim'
 Plug 'rafamadriz/neon'
+Plug 'haishanh/night-owl.vim'
 "Plug 'kaicataldo/material.vim'
 "Plug 'ErichDonGubler/vim-sublime-monokai'
 "Plug 'Rigellute/shades-of-purple.vim'
@@ -102,6 +121,7 @@ Plug 'olimorris/onedarkpro.nvim'
 "Plug 'crusoexia/vim-monokai'
 "Plug 'Tiriel/sublimemonokai'
 Plug 'tomasiser/vim-code-dark'
+Plug 'folke/tokyonight.nvim'
 "Plug 'patstockwell/vim-monokai-tasty'
 "Plug 'louispan/vim-monokai-black'
 "Plug 'vim-scripts/grishin-color-scheme'
@@ -128,7 +148,7 @@ Plug 'lifepillar/vim-gruvbox8'
 "Plug 'damage220/solas.vim'
 "Plug 'glepnir/oceanic-material'
 "Plug 'cocopon/iceberg.vim'
-"Plug 'dracula/vim'
+Plug 'dracula/vim'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'jhlgns/naysayer88.vim'
 "Plug 'parkerault/onivim-theme-hybrid'
@@ -153,7 +173,7 @@ Plug 'lifepillar/vim-gruvbox8'
 "Plug 'Everblush/everblush.vim'
 
 " ========== Indents ==========
-Plug 'lukas-reineke/indent-blankline.nvim'
+"Plug 'lukas-reineke/indent-blankline.nvim'
 "Plug 'yggdroot/indentline'
 
 " ########## Images ##########
@@ -195,8 +215,9 @@ call plug#end()
 " json as jsonc
 
 " CLIpboard
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 
+set clipboard=unnamed
 set ttimeout        " time out for key codes
 set ttimeoutlen=0 " wait up to 100ms after Esc for special key
 
@@ -275,7 +296,6 @@ endfunc
   let g:gruvbit_transp_bg = v:true
 
 
-  let g:tokyonight_style = "storm"
 
   " ===== NIGHTFOX SETTINGS =====
 
@@ -370,7 +390,18 @@ endfunc
   "let g:material_theme_style = 'darker'
 "EOF
 
-colorscheme onedark
+
+
+"let g:tokyonight_transparent_sidebar = 1
+"let g:tokyonight_transparent = 1
+"let g:tokyonight_style = "night"
+
+
+lua require("colors")
+lua require("treesitter")
+"lua require("treesitter-context")
+
+"colorscheme tokyonight
 "colorscheme onedarkpro
 
 
@@ -451,9 +482,12 @@ if has('gui_macvim')
   macmenu &File.Print key=<nop>
 endif
 
-
-
 map , <C-^>
+
+" TRANSPARENT
+"hi Normal guibg=NONE ctermbg=NONE
+" JSON STUFF
+let g:vim_json_conceal=0
 
 " ########## Navigation ##########
 nnoremap <leader>1 :'Q<CR>
@@ -489,6 +523,10 @@ nnoremap <silent> <leader>ff :Telescope live_grep<CR>
 " ########## Random  & CursorColumn bg ##########
 cabb W w
 cabb Q q
+
+" LSP
+"lua require("lsp-config")
+
 
 "hi CursorColumn guibg=#404040
 
@@ -579,8 +617,75 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+"set completeopt=menu,menuone,noselect
 
-" transparent
-"hi Normal guibg=NONE ctermbg=NONE
-" json stuff
-let g:vim_json_conceal=0
+"lua <<EOF
+  "-- Setup nvim-cmp.
+  "local cmp = require'cmp'
+
+  "cmp.setup({
+    "snippet = {
+      "-- REQUIRED - you must specify a snippet engine
+      "expand = function(args)
+        "vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        "-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        "-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        "-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      "end,
+    "},
+    "window = {
+      "-- completion = cmp.config.window.bordered(),
+      "-- documentation = cmp.config.window.bordered(),
+    "},
+    "mapping = cmp.mapping.preset.insert({
+      "['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      "['<C-f>'] = cmp.mapping.scroll_docs(4),
+      "['<C-Space>'] = cmp.mapping.complete(),
+      "['<C-e>'] = cmp.mapping.abort(),
+      "['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    "}),
+    "sources = cmp.config.sources({
+      "{ name = 'nvim_lsp' },
+      "{ name = 'vsnip' }, -- For vsnip users.
+      "-- { name = 'luasnip' }, -- For luasnip users.
+      "-- { name = 'ultisnips' }, -- For ultisnips users.
+      "-- { name = 'snippy' }, -- For snippy users.
+    "}, {
+      "{ name = 'buffer' },
+    "})
+  "})
+
+  "-- Set configuration for specific filetype.
+  "cmp.setup.filetype('gitcommit', {
+    "sources = cmp.config.sources({
+      "{ name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    "}, {
+      "{ name = 'buffer' },
+    "})
+  "})
+
+  "-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  "cmp.setup.cmdline('/', {
+    "mapping = cmp.mapping.preset.cmdline(),
+    "sources = {
+      "{ name = 'buffer' }
+    "}
+  "})
+
+  "-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  "cmp.setup.cmdline(':', {
+    "mapping = cmp.mapping.preset.cmdline(),
+    "sources = cmp.config.sources({
+      "{ name = 'path' }
+    "}, {
+      "{ name = 'cmdline' }
+    "})
+  "})
+
+  "-- Setup lspconfig.
+  "local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  "-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  "require('lspconfig')['tsserver'].setup {
+    "capabilities = capabilities
+  "}
+"EOF
