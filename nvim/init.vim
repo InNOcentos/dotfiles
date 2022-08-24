@@ -59,7 +59,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
 
-  "Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons'
 
   "Plug 'nvim-telescope/telescope.nvim'
   "Plug 'dyng/ctrlsf.vim'
@@ -90,33 +90,37 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'connorholyday/vim-snazzy'
 "Plug 'haystackandroid/vim-crunchbang'
 "Plug 'sonph/onehalf'
-"Plug 'jnurmine/Zenburn'
+Plug 'jnurmine/Zenburn'
 "Plug 'phanviet/vim-monokai-pro'
 "Plug 'acepukas/vim-zenburn'
 "Plug 'morhetz/gruvbox'
-Plug 'savq/melange'
-Plug 'fratajczak/one-monokai-vim'
-Plug 'catppuccin/vim'
+"Plug 'savq/melange'
+"Plug 'fratajczak/one-monokai-vim'
+"Plug 'catppuccin/vim'
 Plug 'shaunsingh/moonlight.nvim'
-Plug 'marcopaganini/termschool-vim-theme'
+"Plug 'marcopaganini/termschool-vim-theme'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'sickill/vim-monokai'
 "Plug 'sainnhe/sonokai'
 "Plug 'baskerville/bubblegum'
 Plug 'flrnd/candid.vim'
-Plug 'rafamadriz/neon'
-Plug 'haishanh/night-owl.vim'
+Plug 'marko-cerovac/material.nvim'
+"Plug 'rafamadriz/neon'
+"Plug 'haishanh/night-owl.vim'
 "Plug 'kaicataldo/material.vim'
-"Plug 'ErichDonGubler/vim-sublime-monokai'
+Plug 'ErichDonGubler/vim-sublime-monokai'
+Plug 'overcache/NeoSolarized'
 "Plug 'Rigellute/shades-of-purple.vim'
 "Plug 'sjl/badwolf'
 Plug 'navarasu/onedark.nvim'
 Plug 'doums/darcula'
-Plug 'arcticicestudio/nord-vim'
-Plug 'Mofiqul/vscode.nvim'
-Plug 'lifepillar/vim-solarized8'
-Plug 'EdenEast/nightfox.nvim'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'Mofiqul/vscode.nvim'
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'EdenEast/nightfox.nvim'
 "Plug 'tomasiser/vim-code-dark'
-Plug 'olimorris/onedarkpro.nvim'
+"Plug 'olimorris/onedarkpro.nvim'
+"Plug 'martinsione/darkplus.nvim'
 "Plug 'patstockwell/vim-monokai-tasty'
 "Plug 'crusoexia/vim-monokai'
 "Plug 'Tiriel/sublimemonokai'
@@ -133,9 +137,10 @@ Plug 'folke/tokyonight.nvim'
 "Plug 'KeitaNakamura/neodark.vim'
 Plug 'sonph/onehalf'
 Plug 'lifepillar/vim-gruvbox8'
+Plug 'cocopon/iceberg.vim'
 "Plug 'sainnhe/everforest'
 "Plug 'Rigellute/rigel'
-"Plug 'savq/melange'
+Plug 'savq/melange'
 "Plug 'mikker/seoul256-iTerm'
 "Plug 'mhartington/oceanic-next'
 "Plug 'junegunn/seoul256.vim'
@@ -149,12 +154,14 @@ Plug 'lifepillar/vim-gruvbox8'
 "Plug 'glepnir/oceanic-material'
 "Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'altercation/vim-colors-solarized'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'jhlgns/naysayer88.vim'
 "Plug 'parkerault/onivim-theme-hybrid'
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'carakan/new-railscasts-theme'
-"Plug 'vim-scripts/Zenburn'
+Plug 'vim-scripts/Zenburn'
 "Plug 'mdlerch/tungsten.vim'
 "Plug 'haystackandroid/vim-crunchbang'
 "Plug 'habamax/vim-bronzage'
@@ -188,14 +195,13 @@ call plug#end()
 " ########## Indents ##########
 
 
+"show_current_context = true,
+"show_current_context_start = true,
 "lua << EOF
 "vim.opt.list = true
-"vim.opt.listchars:append("space:⋅")
 
 "require("indent_blankline").setup {
     "space_char_blankline = " ",
-    "show_current_context = true,
-    "show_current_context_start = true,
 "}
 "EOF
 
@@ -227,7 +233,9 @@ augroup JsonToJsonc
   autocmd! FileType json set filetype=jsonc
 augroup END
 
-"set cursorcolumn
+"set cursorline
+
+
 "set colorcolumn=120
 
 " j/k will move virtual lines (lines that wrap)
@@ -397,12 +405,32 @@ endfunc
 "let g:tokyonight_style = "night"
 
 
-lua require("colors")
+"lua require("colors")
 lua require("treesitter")
 "lua require("treesitter-context")
-
+let g:solarized_termcolors=256
 "colorscheme tokyonight
 "colorscheme onedarkpro
+
+"colorscheme solarized8
+
+
+let g:material_style = "deep ocean"
+
+"if exists("&termguicolors") && exists("&winblend")
+  "syntax enable
+  "set termguicolors
+  "set winblend=0
+  "set wildoptions=pum
+  "set pumblend=5
+  "set background=dark
+  "" Use NeoSolarized
+  "let g:neosolarized_termtrans=1
+  "runtime ./colors/NeoSolarized.vim
+  "colorscheme NeoSolarized
+"endif
+
+colorscheme zenburn
 
 
 " ########## Maximizer ##########
@@ -689,3 +717,15 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
     "capabilities = capabilities
   "}
 "EOF
+"
+"
+"inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
+"inoremap <silent><expr> <C-e> coc#pum#visible() ? coc#pum#cancel() : "\<C-e>"
+"inoremap <silent><expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+
+"inoremap <silent><expr> <TAB>
+        "\ coc#pum#visible() ? coc#pum#next(1):
+        "\ <SID>check_back_space() ? "\<Tab>" :
+        "\ coc#refresh()
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+
